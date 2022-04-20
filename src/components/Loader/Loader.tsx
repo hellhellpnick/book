@@ -1,15 +1,16 @@
 import React from 'react';
+import { Box } from '@mui/material';
 import { useStyles } from './Loader.styled';
 
 function Loader() {
   const classes = useStyles();
 
   return (
-    <div className={classes.center}>
-      <div className={classes.loader}>
-        <div className={classes.inner} />
-      </div>
-    </div>
+    <Box component="div" className={classes.center}>
+      <Box component="div" className={classes.loader}>
+        <Box component="div" className={classes.inner} />
+      </Box>
+    </Box>
   );
 }
 

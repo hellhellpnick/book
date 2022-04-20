@@ -1,5 +1,6 @@
-import { ThemeProvider } from '@material-ui/core/styles';
 import React, { Suspense } from 'react';
+import { Box } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
 import MainNav from './components/MainNav/MainNav';
@@ -10,12 +11,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <div className="App">
+        <Box component="div" className="App">
           <Suspense fallback={<Loader />}>
             <Router />
           </Suspense>
           <MainNav />
-        </div>
+        </Box>
       </BrowserRouter>
     </ThemeProvider>
   );
