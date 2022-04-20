@@ -12,10 +12,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Box component="div" className="App">
+          <MainNav />
           <Suspense fallback={<Loader />}>
             <Router />
           </Suspense>
-          <MainNav />
         </Box>
       </BrowserRouter>
     </ThemeProvider>
