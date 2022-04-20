@@ -72,6 +72,12 @@ function MainNav() {
               </ListItemIcon>
               <ListItemText className={classes.navText} primary="JS" />
             </ListItemButton>
+            <ListItemButton sx={{ pl: 4 }}>
+              <ListItemIcon className={classes.navIcon}>
+                <i className="fa-brands fa-react" />
+              </ListItemIcon>
+              <ListItemText className={classes.navText} primary="React" />
+            </ListItemButton>
           </List>
         </Collapse>
         <ListItemButton onClick={() => setBack(!isBack)}>
