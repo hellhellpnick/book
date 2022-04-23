@@ -262,6 +262,27 @@ const arrHTML = [
       },
     ],
   },
+  {
+    id: 9,
+    title: 'Списки',
+    elements: [
+      {
+        id: 1,
+        title: '<ul>',
+        url: 'ul',
+      },
+      {
+        id: 2,
+        title: '<ol>',
+        url: 'ol',
+      },
+      {
+        id: 3,
+        title: '<li>',
+        url: 'li',
+      },
+    ],
+  },
 ];
 
 export { arrHTML };
