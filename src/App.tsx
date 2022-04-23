@@ -3,7 +3,6 @@ import { Box } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
-import MainNav from './components/MainNav/MainNav';
 import { Router } from './Router';
 import theme from './theme/theme';
 
@@ -12,7 +11,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Box component="div" className="App">
-          <MainNav />
           <Suspense fallback={<Loader />}>
             <Router />
           </Suspense>

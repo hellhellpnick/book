@@ -17,7 +17,9 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CodeIcon from '@mui/icons-material/Code';
 import ListItemButton from '@mui/material/ListItemButton';
+import { NavLink } from 'react-router-dom';
 import useStyles from './MainNav.styled';
+import { routes } from '../../Router';
 
 function MainNav() {
   const classes = useStyles();
@@ -40,7 +42,7 @@ function MainNav() {
           >
             Menu
           </ListSubheader>
-      )}
+        )}
         className={classes.nav}
       >
         <ListItemButton onClick={() => setFront(!isFront)}>
@@ -50,33 +52,42 @@ function MainNav() {
           <ListItemText className={classes.navText} primary="Front" />
           {isFront
             ? <KeyboardArrowDownIcon className={classes.navIcon} />
-            : <KeyboardArrowUpIcon className={classes.navIcon} /> }
+            : <KeyboardArrowUpIcon className={classes.navIcon} />}
         </ListItemButton>
         <Collapse in={isFront} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon className={classes.navIcon}>
-                <HtmlIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.navText} primary="HTML" />
+          <List disablePadding>
+            <ListItemButton>
+              <NavLink to={routes.front.html.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <HtmlIcon />
+                </ListItemIcon>
+                <ListItemText primary="HTML" />
+              </NavLink>
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon className={classes.navIcon}>
-                <CssIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.navText} primary="CSS" />
+            <ListItemButton>
+              <NavLink to={routes.front.css.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <CssIcon />
+                </ListItemIcon>
+                <ListItemText primary="CSS" />
+              </NavLink>
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon className={classes.navIcon}>
-                <JavascriptIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.navText} primary="JS" />
+            <ListItemButton>
+
+              <NavLink to={routes.front.js.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <JavascriptIcon />
+                </ListItemIcon>
+                <ListItemText primary="JS" />
+              </NavLink>
             </ListItemButton>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon className={classes.navIcon}>
-                <i className="fa-brands fa-react" />
-              </ListItemIcon>
-              <ListItemText className={classes.navText} primary="React" />
+            <ListItemButton>
+              <NavLink to={routes.front.react.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <i className="fa-brands fa-react" />
+                </ListItemIcon>
+                <ListItemText primary="React" />
+              </NavLink>
             </ListItemButton>
           </List>
         </Collapse>
@@ -87,15 +98,17 @@ function MainNav() {
           <ListItemText className={classes.navText} primary="Back" />
           {isBack
             ? <KeyboardArrowDownIcon className={classes.navIcon} />
-            : <KeyboardArrowUpIcon className={classes.navIcon} /> }
+            : <KeyboardArrowUpIcon className={classes.navIcon} />}
         </ListItemButton>
         <Collapse in={isBack} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon className={classes.navIcon}>
-                <PhpIcon />
-              </ListItemIcon>
-              <ListItemText className={classes.navText} primary="PHP" />
+          <List disablePadding>
+            <ListItemButton>
+              <NavLink to={routes.back.php.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <PhpIcon />
+                </ListItemIcon>
+                <ListItemText primary="PHP" />
+              </NavLink>
             </ListItemButton>
           </List>
         </Collapse>

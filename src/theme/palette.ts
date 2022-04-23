@@ -23,11 +23,6 @@ declare module '@material-ui/core/styles' {
       main: string;
     };
 
-    iconBack: {
-      main: string;
-      primary: string;
-    };
-
     iconColor: {
       main: string;
       primary: string;
@@ -35,6 +30,7 @@ declare module '@material-ui/core/styles' {
 
     border: {
       main: string;
+      primary: string;
     };
 
     shadow: {
@@ -67,11 +63,6 @@ declare module '@material-ui/core/styles' {
         main?: string;
       };
 
-      iconBack?: {
-        main?: string;
-        primary?: string;
-      };
-
       iconColor?: {
         main?: string;
         primary?: string;
@@ -79,6 +70,7 @@ declare module '@material-ui/core/styles' {
 
       border?: {
         main?: string;
+        primary?: string;
       };
 
       shadow?: {
@@ -112,18 +104,15 @@ const colors = {
     main: '#1c82cc',
   },
 
-  iconBack: {
-    main: '#3f4040',
-    primary: '#717273',
-  },
-
   iconColor: {
     main: '#717273',
     primary: '#575859',
+    second: '#3f4040',
   },
 
   border: {
     main: '#404242',
+    primary: '#1c92ca',
   },
 
   shadow: {

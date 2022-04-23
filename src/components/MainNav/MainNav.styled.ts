@@ -2,17 +2,24 @@ import { makeStyles, CustomTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: CustomTheme) => ({
   navWrapper: {
+    position: 'fixed',
+    left: 0,
+    top: 0,
+    bottom: 0,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    height: '100vh',
+    minHeight: '100vh',
+    height: '100%',
     overflowX: 'hidden',
     overflowY: 'visible',
-    maxWidth: '15%',
+    maxWidth: '250px',
     width: '100%',
     padding: '20px 0',
     backgroundColor: theme.colors.background.main,
+    transition: 'all 0.2s ease',
+    zIndex: 10,
 
     '&::-webkit-scrollbar': {
       width: 10,
@@ -50,14 +57,22 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     color: theme.colors.text.primary,
   },
 
+  navIcon: {
+    color: theme.colors.iconColor.main,
+    transition: 'all 0.2s ease',
+  },
+
   navText: {
+    paddingLeft: 15,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    textDecoration: 'none',
     fontSize: 14,
     color: theme.colors.text.main,
   },
 
-  navIcon: {
-    color: theme.colors.iconColor.main,
-  },
 }));
 
 export default useStyles;

@@ -1,12 +1,12 @@
 import React from 'react';
-import HomePage from '../../components/Home/Home';
+import HTMLPage from '../../components/Html/HTMLPage';
 import useChangeTitlePage from '../../hooks/useChangeTitlePage';
 
-function Home<String>({ title }) {
+function HTML({ title }) {
   const { ChangeTitle } = useChangeTitlePage();
   ChangeTitle(title);
 
-  return <HomePage />;
+  return <HTMLPage />;
 }
 
-export default Home;
+export default HTML;
