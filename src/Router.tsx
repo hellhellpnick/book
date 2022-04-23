@@ -31,6 +31,7 @@ const routes = {
 
 const Home = lazy(() => import('./views/Home/Home'));
 const HTML = lazy(() => import('./views/Html/HTML'));
+const CSS = lazy(() => import('./views/Css/CSS'));
 const Layout = lazy(() => import('./components/Layout/Layout'));
 
 function Router() {
@@ -41,19 +42,19 @@ function Router() {
           index
           element={
             <Home title="Book - programer" />
-}
+          }
         />
         <Route
           path={routes.front.html.main}
           element={
             <HTML title="Book - HTML" />
-}
+          }
         />
         <Route
           path={routes.front.css.main}
           element={
-            <HTML title="Book - CSS" />
-}
+            <CSS title="Book - CSS" />
+          }
         />
       </Route>
 

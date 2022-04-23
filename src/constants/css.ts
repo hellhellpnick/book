@@ -1,0 +1,3 @@
+const arrCSS = [];
+
+export { arrCSS };

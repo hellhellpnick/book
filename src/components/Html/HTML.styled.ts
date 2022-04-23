@@ -2,6 +2,7 @@ import { makeStyles, CustomTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: CustomTheme) => ({
   center: {
+    position: 'relative',
     maxWidth: '980px',
     width: '100%',
     margin: '0 auto',

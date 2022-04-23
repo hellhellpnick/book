@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     overflowX: 'hidden',
     overflowY: 'visible',
     padding: '20px 10px',
+    minHeight: '100vh',
     marginLeft: 250,
     backgroundColor: theme.colors.background.primary,
     width: '100%',
