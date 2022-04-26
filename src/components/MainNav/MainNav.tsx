@@ -89,6 +89,14 @@ function MainNav() {
                 <ListItemText primary="React" />
               </NavLink>
             </ListItemButton>
+            <ListItemButton>
+              <NavLink to={routes.front.lessons.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <i className="fa-solid fa-person-chalkboard" />
+                </ListItemIcon>
+                <ListItemText primary="Lessons" />
+              </NavLink>
+            </ListItemButton>
           </List>
         </Collapse>
         <ListItemButton onClick={() => setBack(!isBack)}>
@@ -108,6 +116,14 @@ function MainNav() {
                   <PhpIcon />
                 </ListItemIcon>
                 <ListItemText primary="PHP" />
+              </NavLink>
+            </ListItemButton>
+            <ListItemButton>
+              <NavLink to={routes.back.lessons.main} className={classes.navText}>
+                <ListItemIcon className={classes.navIcon}>
+                  <i className="fa-solid fa-person-chalkboard" />
+                </ListItemIcon>
+                <ListItemText primary="Lessons" />
               </NavLink>
             </ListItemButton>
           </List>
