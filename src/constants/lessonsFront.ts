@@ -361,6 +361,527 @@ const arrLessonFront = [
       },
     ],
   },
+  {
+    id: 4,
+    title: 'Position and display',
+    url: 'lesson4',
+    elements: [
+      {
+        title: 'Position',
+        p: `Устанавливает способ 
+        позиционирования элемента 
+        относительно окна браузера или других объектов на веб-странице.`,
+        id: 1,
+        pre: '',
+      },
+      {
+        title: 'Свойство Position: Absolute',
+        p: `Указывает, 
+        что элемент абсолютно позиционирован, при 
+        этом другие элементы отображаются на веб-странице словно 
+        абсолютно позиционированного элемента и нет. Положение элемента задается
+         свойствами left, top, right и bottom, также на положение влияет значение 
+         свойства position родительского элемента. Так, если у родителя значение position 
+         установлено как static или родителя нет, то отсчет координат ведется от
+          края окна браузера. Если у 
+         родителя значение position задано как fixed, relative или absolute, 
+         то отсчет координат ведется от края родительского элемента.`,
+        id: 2,
+        pre: `<html>
+        <head>
+         <meta charset="utf-8">
+         <title>position</title>
+         <style>
+          .layer1 {
+           position: relative; /* Относительное позиционирование */
+           background: #f0f0f0; /* Цвет фона */
+           height: 200px; /* Высота блока */
+          }
+          .layer2 {
+           position: absolute; /* Абсолютное позиционирование */
+           bottom: 15px; /* Положение от нижнего края */
+           right: 15px; /* Положение от правого края */
+           line-height: 1px;
+          }
+         </style>
+        </head>
+        <body>
+         <div class="layer1">
+          <div class="layer2">
+            <img src="images/girl.jpg" alt="Девочка" />
+          </div>
+         </div>
+        </body>
+       </html>`,
+      },
+      {
+        id: 3,
+        title: 'Свойство Position: Fixed',
+        p: `По своему действию это значение близко к absolute, но в отличие от него 
+        привязывается к указанной свойствами left, top, right и bottom точке 
+        на экране и не меняет 
+        своего положения при прокрутке веб-страницы. Браузер Firefox 
+        вообще не отображает полосы прокрутки
+        , если положение элемента задано фиксированным, и оно не 
+        помещается целиком в окно браузера.
+         В браузере Opera хотя и показываются полосы прокрутки, 
+         но они никак не влияют на позицию элемента.`,
+        pre: `<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+        </head>
+        
+        <body>
+          <style>
+            .box {
+              min-height: 150vh;
+              background-color: yellow;
+            }
+        
+            .layout {
+              width: 50px;
+              height: 50px;
+            }
+        
+            .layout1 {
+              background-color: red;
+              position: fixed;
+              top: 20px;
+              left: 20px;
+            }
+        
+            .layout2 {
+              background-color: navy;
+            }
+        
+            .layout3 {
+              background-color: aqua;
+            }
+          </style>
+          <div class="box"></div>
+          <div class="layout layout1"></div>
+          <div class="layout layout2"></div>
+          <div class="layout layout3"></div>
+        </body>
+        
+        </html>`,
+      },
+      {
+        id: 4,
+        title: 'Свойство Position: Relative',
+        p: `Положение элемента устанавливается относительно его исходного места. 
+        Добавление свойств left, top, right и 
+        bottom изменяет позицию элемента и сдвигает его в
+         ту или иную сторону от первоначального расположения.`,
+        pre: `<!DOCTYPE html>
+         <html lang="en">
+         
+         <head>
+           <meta charset="UTF-8">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Document</title>
+         </head>
+         
+         <body>
+           <style>
+             .box {
+               min-height: 150vh;
+               background-color: yellow;
+             }
+         
+             .layout {
+               width: 50px;
+               height: 50px;
+             }
+         
+             .layout1 {
+               background-color: red;
+               position: fixed;
+               top: 20px;
+               left: 20px;
+             }
+         
+             .layout2 {
+               position: relative;
+               top: -20px;
+               background-color: navy;
+             }
+         
+             .layout3 {
+               background-color: aqua;
+             }
+           </style>
+           <div class="box"></div>
+           <div class="layout layout1"></div>
+           <div class="layout layout2"></div>
+           <div class="layout layout3"></div>
+         </body>
+         
+         </html>`,
+      },
+      {
+        id: 5,
+        title: 'Свойство Postion: Static',
+        p: `Элементы отображаются как обычно. 
+        Использование свойств left, top, right и bottom 
+        не приводит к каким-либо результатам.`,
+        pre: `<!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+        </head>
+        
+        <body>
+          <style>
+            .box {
+              min-height: 150vh;
+              background-color: yellow;
+            }
+        
+            .layout {
+              width: 50px;
+              height: 50px;
+            }
+        
+            .layout1 {
+              background-color: red;
+              position: fixed;
+              top: 20px;
+              left: 20px;
+            }
+        
+            .layout2 {
+              position: relative;
+              top: -20px;
+              background-color: navy;
+            }
+        
+            .layout3 {
+              position: static;
+              left: 20px;
+              background-color: aqua;
+            }
+          </style>
+          <div class="box"></div>
+          <div class="layout layout1"></div>
+          <div class="layout layout2"></div>
+          <div class="layout layout3"></div>
+        </body>
+        
+        </html>`,
+      },
+      {
+        id: 6,
+        title: 'display',
+        p: `Список возможных значений этого свойства, понимаемый разными
+         браузерами очень короткий — block, inline, list-item и none.
+          Все остальные допустимые значения поддерживаются браузерами выборочно`,
+        pre: '',
+      },
+      {
+        id: 7,
+        title: 'Свойство display: block',
+        p: `Элемент показывается как блочный. Применение этого 
+        значения для встроенных элементов, например
+         тега <span>, заставляет его вести подобно блокам — происходит перенос 
+         строк в начале и в конце содержимого.`,
+        pre: `<!DOCTYPE html>
+         <html lang="en">
+         
+         <head>
+           <meta charset="UTF-8">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Document</title>
+         </head>
+         
+         <body>
+           <style>
+             .box {
+               display: block;
+               min-height: 150vh;
+               background-color: yellow;
+             }
+         
+             .layout {
+               width: 50px;
+               height: 50px;
+             }
+         
+             .layout1 {
+               background-color: red;
+               position: fixed;
+               top: 20px;
+               left: 20px;
+             }
+         
+             .layout2 {
+               position: relative;
+               top: -20px;
+               background-color: navy;
+             }
+         
+             .layout3 {
+               position: static;
+               left: 20px;
+               background-color: aqua;
+             }
+           </style>
+           <div class="box"></div>
+           <div class="layout layout1"></div>
+           <div class="layout layout2"></div>
+           <div class="layout layout3"></div>
+         </body>
+         
+         </html>`,
+      },
+      {
+        id: 8,
+        title: 'Свойство display: inline',
+        p: `Элемент отображается как встроенный. Использование блочных тегов, 
+        таких как <div> и <p>, автоматически создает перенос и показывает содержимое
+         этих тегов с         новой строки. Значение inline отменяет эту особенность,
+          поэтому содержимое блочных элементов начинается с того места, 
+          где окончился предыдущий элемент.`,
+        pre: `<!DOCTYPE html>
+          <html lang="en">
+          
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+          </head>
+          
+          <body>
+            <style>
+              .box {
+                display: inline;
+                min-height: 150vh;
+                background-color: yellow;
+              }
+          
+              .layout {
+                width: 50px;
+                height: 50px;
+              }
+          
+              .layout1 {
+                background-color: red;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+              }
+          
+              .layout2 {
+                position: relative;
+                top: -20px;
+                background-color: navy;
+              }
+          
+              .layout3 {
+                position: static;
+                left: 20px;
+                background-color: aqua;
+              }
+            </style>
+            <div class="box"></div>
+            <div class="layout layout1"></div>
+            <div class="layout layout2"></div>
+            <div class="layout layout3"></div>
+          </body>
+          
+          </html>`,
+      },
+      {
+        id: 9,
+        title: 'Свойстов display: inline-block',
+        p: `Это значение генерирует блочный элемент, который 
+        обтекается другими элементами веб-страницы подобно встроенному
+         элементу. Фактически такой элемент по своему действию похож на 
+         встраиваемые элементы (вроде тега <img>). При этом его 
+         внутренняя часть форматируется как блочный элемент, а сам 
+         элемент — как встроенный.`,
+        pre: `<!DOCTYPE html>
+         <html lang="en">
+         
+         <head>
+           <meta charset="UTF-8">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Document</title>
+         </head>
+         
+         <body>
+           <style>
+             .box {
+               display: inline-block;
+               min-height: 150vh;
+               background-color: yellow;
+             }
+         
+             .layout {
+               width: 50px;
+               height: 50px;
+             }
+         
+             .layout1 {
+               background-color: red;
+               position: fixed;
+               top: 20px;
+               left: 20px;
+             }
+         
+             .layout2 {
+               position: relative;
+               top: -20px;
+               background-color: navy;
+             }
+         
+             .layout3 {
+               position: static;
+               left: 20px;
+               background-color: aqua;
+             }
+           </style>
+           <div class="box"></div>
+           <div class="layout layout1"></div>
+           <div class="layout layout2"></div>
+           <div class="layout layout3"></div>
+         </body>
+         
+         </html>`,
+      },
+      {
+        id: 10,
+        title: 'Свойство display: none',
+        p: `Временно удаляет элемент из документа. Занимаемое
+         им место не резервируется и веб-страница формируется 
+         так, словно элемента и не было. Изменить значение и 
+         сделать вновь видимым элемент можно с помощью скриптов,
+          обращаясь к свойствам через объектную модель. В этом 
+          случае происходит переформатирование данных на странице 
+          с учетом вновь добавленного элемента.`,
+        pre: `<!DOCTYPE html>
+          <html lang="en">
+          
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+          </head>
+          
+          <body>
+            <style>
+              .box {
+                display: none;
+                min-height: 150vh;
+                background-color: yellow;
+              }
+          
+              .layout {
+                width: 50px;
+                height: 50px;
+              }
+          
+              .layout1 {
+                background-color: red;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+              }
+          
+              .layout2 {
+                position: relative;
+                top: -20px;
+                background-color: navy;
+              }
+          
+              .layout3 {
+                position: static;
+                left: 20px;
+                background-color: aqua;
+              }
+            </style>
+            <div class="box"></div>
+            <div class="layout layout1"></div>
+            <div class="layout layout2"></div>
+            <div class="layout layout3"></div>
+          </body>
+          
+          </html>`,
+      },
+      {
+        id: 11,
+        title: 'Свойство display: flex',
+        p: `Модуль Flexible Box Layout упрощает разработку
+         гибкой адаптивной структуры макета без использования 
+         float или позиционирования.`,
+        pre: `<!DOCTYPE html>
+         <html lang="en">
+         
+         <head>
+           <meta charset="UTF-8">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Document</title>
+         </head>
+         
+         <body>
+           <style>
+             .box {
+               display: flex;
+               min-height: 150vh;
+               background-color: yellow;
+             }
+         
+             .layout {
+               width: 50px;
+               height: 50px;
+             }
+         
+             .layout1 {
+               background-color: red;
+               position: fixed;
+               top: 20px;
+               left: 20px;
+             }
+         
+             .layout2 {
+               position: relative;
+               top: -20px;
+               background-color: navy;
+             }
+         
+             .layout3 {
+               position: static;
+               left: 20px;
+               background-color: aqua;
+             }
+           </style>
+           <div class="box">
+             <div class="layout layout1"></div>
+             <div class="layout layout2"></div>
+             <div class="layout layout3"></div>
+           </div>
+         </body>
+         
+         </html>`,
+
+      },
+    ],
+  },
 ];
 
 export { arrLessonsFront, arrLessonFront };

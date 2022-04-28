@@ -84,7 +84,7 @@ function MainNav() {
             <ListItemButton>
               <NavLink to={routes.front.react.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
-                  <i className="fa-brands fa-react" />
+                  <Box component="i" className="fa-brands fa-react" />
                 </ListItemIcon>
                 <ListItemText primary="React" />
               </NavLink>
@@ -92,7 +92,7 @@ function MainNav() {
             <ListItemButton>
               <NavLink to={routes.front.lessons.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
-                  <i className="fa-solid fa-person-chalkboard" />
+                  <Box component="i" className="fa-solid fa-person-chalkboard" />
                 </ListItemIcon>
                 <ListItemText primary="Lessons" />
               </NavLink>
@@ -121,7 +121,7 @@ function MainNav() {
             <ListItemButton>
               <NavLink to={routes.back.lessons.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
-                  <i className="fa-solid fa-person-chalkboard" />
+                  <Box component="i" className="fa-solid fa-person-chalkboard" />
                 </ListItemIcon>
                 <ListItemText primary="Lessons" />
               </NavLink>
