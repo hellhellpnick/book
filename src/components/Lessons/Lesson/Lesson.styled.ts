@@ -52,7 +52,9 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     backgroundColor: theme.colors.background.second,
     position: 'fixed',
     width: '100%',
-    height: '100vh',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    minHeight: '100vh',
     top: 0,
     left: 0,
     right: 0,
@@ -88,6 +90,13 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     position: 'absolute',
     bottom: 40,
     right: 120,
+  },
+
+  iconClose: {
+    position: 'absolute',
+    top: 20,
+    right: 40,
+    zIndex: 2,
   },
 }));
 

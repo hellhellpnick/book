@@ -1,67 +1,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  Box, Link, IconButton, Typography,
+  Box, IconButton, Typography,
 } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-
-import { arrLessonFront, arrLessonSliderFront } from '../../../constants/lessonsFront';
+import CloseIcon from '@mui/icons-material/Close';
+import { arrLessonFront } from '../../../constants/lessonsFront';
+import { PrevArrow, NextArrow } from './Arrows';
 import useEvents from '../../../hooks/useEvents';
 import useStyles from './Lesson.styled';
-
-interface ILesson {
-  id: number,
-  title: string,
-  url: string,
-  elements: any[],
-}
-interface ILessonSlider {
-  id: number,
-  title: string,
-  url: string,
-  elements:
-  {
-    title: string,
-    p: string,
-    id: number,
-    pre: string
-  }[]
-}
-
-function SampleNextArrow(props) {
-  const { onClick } = props;
-  const classes = useStyles();
-
-  return (
-    <IconButton
-      color="primary"
-      aria-label="add an alarm"
-      onClick={onClick}
-      className={classes.arrowNext}
-    >
-      <ArrowForwardIosIcon />
-    </IconButton>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { onClick } = props;
-  const classes = useStyles();
-
-  return (
-    <IconButton
-      color="primary"
-      aria-label="add an alarm"
-      onClick={onClick}
-      className={classes.arrowPrev}
-    >
-      <ArrowBackIosNewIcon />
-    </IconButton>
-  );
-}
+import { ILesson } from '../../../modules/Lessons';
 
 function LessonPage() {
   const { id } = useParams();
@@ -74,26 +23,25 @@ function LessonPage() {
     url: '',
     elements: [],
   });
-  const [isLessonSlider, setLessonSlider] = useState<ILessonSlider>({
-    id: 1,
-    title: '',
-    url: '',
-    elements: [],
-  });
   const settingsSlider = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
+
   const handler = ({ key }) => {
+    const body = document.getElementsByTagName('body')[0];
+
     if (key === 'Escape') {
       setShowSlider(false);
+      body.style.overflow = 'auto';
     } else if (key === 'F9') {
       setShowSlider(true);
+      body.style.overflow = 'hidden';
     }
   };
 
@@ -102,9 +50,6 @@ function LessonPage() {
   useEffect(() => {
     arrLessonFront.find((item) => (item.url === id
       ? setLesson(item)
-      : false));
-    arrLessonSliderFront.find((item) => (item.url === id
-      ? setLessonSlider(item)
       : false));
   }, [id]);
 
@@ -116,8 +61,15 @@ function LessonPage() {
           ? classes.showSlider
           : classes.hiddenSlider}
       >
+        <IconButton
+          color="primary"
+          onClick={() => handler({ key: 'Escape' })}
+          className={classes.iconClose}
+        >
+          <CloseIcon />
+        </IconButton>
         <Slider {...settingsSlider}>
-          {isLessonSlider.elements.map((item) => (
+          {isLesson.elements.map((item) => (
             <Box component="div" key={item.id} className={classes.slider}>
               <Typography component="h3" className={classes.title}>
                 {item.title}
@@ -135,32 +87,16 @@ function LessonPage() {
 
         </Slider>
       </Box>
-      <Typography component="h2" className={classes.title}>{isLesson.title}</Typography>
       {!!isLesson.elements.length
-        && isLesson.elements.map((item) => {
-          if (item.p) {
-            return (
-              <Box
-                component="p"
-                key={item.id}
-                className={classes.text}
-              >
-                {item.p}
-              </Box>
-            );
-          } if (item.link) {
-            return <Link href={item.url}>{item.link}</Link>;
-          }
-          return (
-            <Box
-              component="pre"
-              key={item.id}
-              className={classes.img}
-            >
-              {item.pre}
-            </Box>
-          );
-        })}
+        && isLesson.elements.map((item) => (
+          <Box component="div" key={item.id}>
+            <Typography component="h3" className={classes.title}>
+              {item.title}
+            </Typography>
+            <Box component="p" className={classes.text}>{item.p}</Box>
+            {item.pre && <Box component="pre" className={classes.img}>{item.pre}</Box>}
+          </Box>
+        ))}
     </Box>
   );
 }
