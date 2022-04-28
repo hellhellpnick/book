@@ -64,6 +64,23 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     '& .slick-track': {
       display: 'flex !important',
     },
+
+    '&::-webkit-scrollbar': {
+      width: 10,
+      borderRadius: 10,
+    },
+
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'rgba(255, 255, 255, 0.01)',
+    },
+
+    '& ::-webkit-scrollbar-thumb': {
+      backgroundColor: 'rgba(255, 255, 255, 0.11)',
+      borderRadius: 10,
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    },
   },
 
   slider: {
