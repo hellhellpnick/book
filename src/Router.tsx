@@ -69,19 +69,25 @@ function Router() {
         <Route
           path={routes.front.lessons.main}
           element={
-            <Lessons title="Book - Lessons Front-end" />
+            <Lessons title="Book - Lessons Front-end" show />
           }
         />
         <Route
           path={routes.front.lessons.primary}
           element={
-            <Lesson title="Book - Lesson Front-end" />
+            <Lesson title="Book - Lesson Front-end" show />
           }
         />
         <Route
           path={routes.back.lessons.main}
           element={
-            <Lessons title="Book - Lessons Back-end" />
+            <Lessons title="Book - Lessons Back-end" show={false} />
+          }
+        />
+        <Route
+          path={routes.back.lessons.primary}
+          element={
+            <Lesson title="Book - Lesson Back-end" show={false} />
           }
         />
       </Route>

@@ -8,12 +8,13 @@ import Slider from 'react-slick';
 import CloseIcon from '@mui/icons-material/Close';
 import { animated, Transition } from 'react-spring';
 import { arrLessonFront } from '../../../constants/lessonsFront';
+import { arrLessonBack } from '../../../constants/lessonsBack';
 import { PrevArrow, NextArrow } from './Arrows';
 import useEvents from '../../../hooks/useEvents';
 import useStyles from './Lesson.styled';
 import { ILesson } from '../../../modules/Lessons';
 
-function LessonPage() {
+function LessonPage({ show }) {
   const { id } = useParams();
   const { useEventListener } = useEvents();
   const classes = useStyles();
@@ -49,10 +50,16 @@ function LessonPage() {
   useEventListener('keydown', handler);
 
   useEffect(() => {
-    arrLessonFront.find((item) => (item.url === id
-      ? setLesson(item)
-      : false));
-  }, [id]);
+    if (show) {
+      arrLessonFront.find((item) => (item.url === id
+        ? setLesson(item)
+        : false));
+    } else {
+      arrLessonBack.find((item) => (item.url === id
+        ? setLesson(item)
+        : false));
+    }
+  }, [id, show]);
 
   return (
     <Box component="div" className={classes.center}>

@@ -2,11 +2,11 @@ import React from 'react';
 import LessonsPage from '../../components/Lessons/Lessons';
 import useChangeTitlePage from '../../hooks/useChangeTitlePage';
 
-function Lessons({ title }) {
+function Lessons({ title, show }) {
   const { ChangeTitle } = useChangeTitlePage();
   ChangeTitle(title);
 
-  return <LessonsPage />;
+  return <LessonsPage show={show} />;
 }
 
 export default Lessons;
