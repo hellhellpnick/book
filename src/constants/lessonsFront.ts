@@ -68,7 +68,7 @@ const arrLessonFront = [
       },
       {
         title: 'Color',
-        p: '"color".  Определяет цвет текста элемента',
+        p: 'Определяет цвет текста элемента',
         id: 1,
         pre: `        <html>
           <head>

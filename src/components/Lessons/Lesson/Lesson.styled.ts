@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
   text: {
     fontSize: 20,
     fontWeight: 500,
-    color: theme.colors.text.main,
+    color: theme.colors.text.primary,
     marginBottom: 20,
     lineHeight: 1.5,
     letterSpacing: 1.2,
@@ -64,10 +64,6 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     '& .slick-track': {
       display: 'flex !important',
     },
-  },
-
-  hiddenSlider: {
-    display: 'none',
   },
 
   slider: {

@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import CloseIcon from '@mui/icons-material/Close';
+import { animated, Transition } from 'react-spring';
 import { arrLessonFront } from '../../../constants/lessonsFront';
 import { PrevArrow, NextArrow } from './Arrows';
 import useEvents from '../../../hooks/useEvents';
@@ -55,39 +56,57 @@ function LessonPage() {
 
   return (
     <Box component="div" className={classes.center}>
-      <Box
-        component="div"
-        className={isShowSlider
-          ? classes.showSlider
-          : classes.hiddenSlider}
+      <Transition
+        items={isShowSlider}
+        from={{ opacity: 0 }}
+        enter={{ opacity: 1 }}
+        leave={{ opacity: 0 }}
+        delay={200}
       >
-        <IconButton
-          color="primary"
-          onClick={() => handler({ key: 'Escape' })}
-          className={classes.iconClose}
-        >
-          <CloseIcon />
-        </IconButton>
-        <Slider {...settingsSlider}>
-          {isLesson.elements.map((item) => (
-            <Box component="div" key={item.id} className={classes.slider}>
-              <Typography component="h3" className={classes.title}>
-                {item.title}
-              </Typography>
-              <Box component="p" className={classes.text}>{item.p}</Box>
-              <Box component="pre" className={classes.img}>{item.pre}</Box>
-            </Box>
-          ))}
-          <Box component="div" className={classes.slider}>
-            <Typography component="h3" className={classes.title}>
-              Спасибо за ваше внимание!
-            </Typography>
-            <Box component="p" className={classes.text}>Домашка не будет скучной :)</Box>
-          </Box>
+        {({ opacity }, item) => item && (
+          <animated.div
+            style={{
+              opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
+            }}
+            className={classes.showSlider}
+          >
+            <IconButton
+              color="primary"
+              onClick={() => handler({ key: 'Escape' })}
+              className={classes.iconClose}
+            >
+              <CloseIcon />
+            </IconButton>
+            <Slider {...settingsSlider}>
+              {isLesson.elements.map((elem) => (
+                <Box component="div" key={elem.id} className={classes.slider}>
+                  <Typography component="h3" className={classes.title}>
+                    {elem.title}
+                  </Typography>
+                  <Box component="p" className={classes.text}>{elem.p}</Box>
+                  <Box component="pre" className={classes.img}>{elem.pre}</Box>
+                </Box>
+              ))}
+              <Box component="div" className={classes.slider}>
+                <Typography component="h3" className={classes.title}>
+                  Спасибо за ваше внимание!
+                </Typography>
+                <Box
+                  component="p"
+                  className={classes.text}
+                >
+                  Домашка не будет скучной :)
 
-        </Slider>
-      </Box>
-      {!!isLesson.elements.length
+                </Box>
+              </Box>
+
+            </Slider>
+          </animated.div>
+        )}
+      </Transition>
+
+      {
+        !!isLesson.elements.length
         && isLesson.elements.map((item) => (
           <Box component="div" key={item.id}>
             <Typography component="h3" className={classes.title}>
@@ -96,7 +115,8 @@ function LessonPage() {
             <Box component="p" className={classes.text}>{item.p}</Box>
             {item.pre && <Box component="pre" className={classes.img}>{item.pre}</Box>}
           </Box>
-        ))}
+        ))
+      }
     </Box>
   );
 }
