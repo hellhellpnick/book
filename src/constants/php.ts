@@ -1,0 +1,3 @@
+const arrPhp = [];
+
+export { arrPhp };

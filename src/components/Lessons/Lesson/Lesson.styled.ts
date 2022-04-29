@@ -94,19 +94,21 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
   },
 
   arrowNext: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: 40,
     right: 40,
+    zIndex: 2,
   },
 
   arrowPrev: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: 40,
     right: 120,
+    zIndex: 2,
   },
 
   iconClose: {
-    position: 'absolute',
+    position: 'fixed',
     top: 20,
     right: 40,
     zIndex: 2,

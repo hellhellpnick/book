@@ -1,12 +1,12 @@
 import React from 'react';
-import HomePage from '../../components/Home/Home';
+import PHPPage from '../../components/PHP/PHPPage';
 import useChangeTitlePage from '../../hooks/useChangeTitlePage';
 
-function Home({ title }) {
+function PHP({ title }) {
   const { ChangeTitle } = useChangeTitlePage();
   ChangeTitle(title);
 
-  return <HomePage />;
+  return <PHPPage />;
 }
 
-export default Home;
+export default PHP;

@@ -40,6 +40,7 @@ const routes = {
 const Home = lazy(() => import('./views/Home/Home'));
 const HTML = lazy(() => import('./views/Html/HTML'));
 const CSS = lazy(() => import('./views/Css/CSS'));
+const PHP = lazy(() => import('./views/PHP/PHP'));
 const Lessons = lazy(() => import('./views/Lessons/Lessons'));
 const Lesson = lazy(() => import('./views/Lessons/Lesson/Lesson'));
 const Layout = lazy(() => import('./components/Layout/Layout'));
@@ -64,6 +65,12 @@ function Router() {
           path={routes.front.css.main}
           element={
             <CSS title="Book - CSS" />
+          }
+        />
+        <Route
+          path={routes.back.php.main}
+          element={
+            <PHP title="Book - PHP" />
           }
         />
         <Route
