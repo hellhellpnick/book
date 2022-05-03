@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import CloseIcon from '@mui/icons-material/Close';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { animated, Transition } from 'react-spring';
 import { arrLessonFront } from '../../../constants/lessonsFront';
 import { arrLessonBack } from '../../../constants/lessonsBack';
@@ -90,8 +91,25 @@ function LessonPage({ show }) {
                   <Typography component="h3" className={classes.title}>
                     {elem.title}
                   </Typography>
-                  <Box component="p" className={classes.text}>{elem.p}</Box>
-                  <Box component="pre" className={classes.img}>{elem.pre}</Box>
+                  <Box component="p" className={classes.text}>
+                    {elem.p}
+
+                  </Box>
+                  {elem.pre
+                    && (
+                      <Box component="pre" className={classes.imgSlider}>
+                        {elem.pre}
+
+                        <IconButton
+                          color="primary"
+                          onClick={() => handler({ key: 'Escape' })}
+                          className={classes.iconCopy}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+
+                      </Box>
+                    )}
                 </Box>
               ))}
               <Box component="div" className={classes.slider}>

@@ -38,6 +38,31 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     marginBottom: 15,
   },
 
+  imgSlider: {
+    position: 'relative',
+    fontSize: 16,
+    fontWeight: 500,
+    lineHeight: 1.2,
+    color: theme.colors.text.main,
+    backgroundColor: theme.colors.background.primary,
+    padding: 20,
+    marginBottom: 15,
+  },
+
+  iconCopy: {
+    position: 'absolute',
+    top: -40,
+    right: -40,
+    zIndex: 2,
+    transition: 'all 0.2s ease',
+
+    '@media(min-width: 1024px)': {
+      '&:hover': {
+        transform: 'scale(1.1)',
+      },
+    },
+  },
+
   link: {
     fontSize: 20,
     color: theme.colors.text.second,
