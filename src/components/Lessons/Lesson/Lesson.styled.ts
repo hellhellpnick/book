@@ -8,6 +8,11 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
+
+    '@media(max-width: 1024px)': {
+      maxWidth: '100%',
+      width: '100%',
+    },
   },
 
   text: {
@@ -36,6 +41,16 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     backgroundColor: theme.colors.background.second,
     padding: 20,
     marginBottom: 15,
+    overflow: 'hidden',
+
+    '@media(max-width: 1024px)': {
+      maxWidth: '100%',
+      width: '100%',
+    },
+  },
+
+  wrapperPre: {
+    position: 'relative',
   },
 
   imgSlider: {
@@ -47,6 +62,8 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     backgroundColor: theme.colors.background.primary,
     padding: 20,
     marginBottom: 15,
+    overflow: 'hidden',
+
   },
 
   iconCopy: {
@@ -60,6 +77,11 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
       '&:hover': {
         transform: 'scale(1.1)',
       },
+    },
+
+    '@media(max-width: 1024px)': {
+      top: 10,
+      right: 10,
     },
   },
 
@@ -106,6 +128,10 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     '&::-webkit-scrollbar-thumb:hover': {
       backgroundColor: 'rgba(255, 255, 255, 0.1)',
     },
+
+    '@media(max-width: 1024px)': {
+      padding: 0,
+    },
   },
 
   slider: {
@@ -116,6 +142,10 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     maxWidth: '90%',
     width: '100%',
     padding: 20,
+
+    '@media(max-width: 1024px)': {
+      maxWidth: '100%',
+    },
   },
 
   arrowNext: {
@@ -132,11 +162,22 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     zIndex: 2,
   },
 
+  alert: {
+    position: 'fixed',
+    right: 20,
+    bottom: 20,
+    zIndex: 100,
+  },
+
   iconClose: {
     position: 'fixed',
     top: 20,
     right: 40,
     zIndex: 2,
+
+    '@media(max-width: 1024px)': {
+      right: 20,
+    },
   },
 }));
 

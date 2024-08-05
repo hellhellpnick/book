@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Typography,
@@ -17,17 +17,35 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CodeIcon from '@mui/icons-material/Code';
 import ListItemButton from '@mui/material/ListItemButton';
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { NavLink } from 'react-router-dom';
 import useStyles from './MainNav.styled';
 import { routes } from '../../Router';
+import { useScreenDetector } from '../../hooks/useScreenDetector';
 
 function MainNav() {
   const classes = useStyles();
+  const { isTablet } = useScreenDetector();
   const [isFront, setFront] = useState(false);
   const [isBack, setBack] = useState(false);
+  const [isHidden, setHidden] = useState(false);
+
+  useEffect(
+    () => setHidden(isTablet),
+    [isTablet],
+  );
 
   return (
-    <Box component="div" className={classes.navWrapper}>
+    // eslint-disable-next-line max-len
+    <Box component="div" className={`${classes.navWrapper} ${isHidden && classes.navHidden}`}>
+      {isTablet && (
+        <Box component="div" className={classes.arrowEvent} onClick={() => setHidden(!isHidden)}>
+          <DoubleArrowIcon className={classes.navIcon}>
+            <HtmlIcon />
+          </DoubleArrowIcon>
+        </Box>
+      )}
+
       <Typography component="h1" className={classes.navTitle}>
         Programer Book
       </Typography>
@@ -57,7 +75,7 @@ function MainNav() {
         <Collapse in={isFront} timeout="auto" unmountOnExit>
           <List disablePadding>
             <ListItemButton>
-              <NavLink to={routes.front.html.main} className={classes.navText}>
+              <NavLink onClick={() => { isTablet && setHidden(true); }} to={routes.front.html.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
                   <HtmlIcon />
                 </ListItemIcon>
@@ -65,7 +83,7 @@ function MainNav() {
               </NavLink>
             </ListItemButton>
             <ListItemButton>
-              <NavLink to={routes.front.css.main} className={classes.navText}>
+              <NavLink onClick={() => { isTablet && setHidden(true); }} to={routes.front.css.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
                   <CssIcon />
                 </ListItemIcon>
@@ -74,7 +92,7 @@ function MainNav() {
             </ListItemButton>
             <ListItemButton>
 
-              <NavLink to={routes.front.js.main} className={classes.navText}>
+              <NavLink onClick={() => { isTablet && setHidden(true); }} to={routes.front.js.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
                   <JavascriptIcon />
                 </ListItemIcon>
@@ -82,7 +100,7 @@ function MainNav() {
               </NavLink>
             </ListItemButton>
             <ListItemButton>
-              <NavLink to={routes.front.react.main} className={classes.navText}>
+              <NavLink onClick={() => { isTablet && setHidden(true); }} to={routes.front.react.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
                   <Box component="i" className="fa-brands fa-react" />
                 </ListItemIcon>
@@ -90,7 +108,7 @@ function MainNav() {
               </NavLink>
             </ListItemButton>
             <ListItemButton>
-              <NavLink to={routes.front.lessons.main} className={classes.navText}>
+              <NavLink onClick={() => { isTablet && setHidden(true); }} to={routes.front.lessons.main} className={classes.navText}>
                 <ListItemIcon className={classes.navIcon}>
                   <Box component="i" className="fa-solid fa-person-chalkboard" />
                 </ListItemIcon>

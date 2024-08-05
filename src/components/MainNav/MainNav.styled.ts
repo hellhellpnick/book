@@ -12,8 +12,7 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     alignItems: 'flex-start',
     minHeight: '100vh',
     height: '100%',
-    overflowX: 'hidden',
-    overflowY: 'visible',
+    overflow: 'visible',
     maxWidth: '250px',
     width: '100%',
     padding: '20px 0',
@@ -37,6 +36,10 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     '&::-webkit-scrollbar-thumb:hover': {
       backgroundColor: 'rgba(255, 255, 255, 0.1)',
     },
+  },
+
+  navHidden: {
+    transform: 'translateX(-100%)',
   },
 
   navTitle: {
@@ -73,6 +76,19 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     color: theme.colors.text.main,
   },
 
+  arrowEvent: {
+    width: 40,
+    height: 40,
+    position: 'absolute',
+    top: 20,
+    right: -40,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.colors.background.main,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+  },
 }));
 
 export default useStyles;

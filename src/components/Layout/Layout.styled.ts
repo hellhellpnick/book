@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     marginLeft: 250,
     backgroundColor: theme.colors.background.primary,
     width: '100%',
+
+    '@media(max-width: 1024px)': {
+      maxWidth: '100%',
+      width: '100%',
+      marginLeft: 0,
+      paddingTop: 60,
+    },
   },
 }));
 

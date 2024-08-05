@@ -1,13 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
   Box, IconButton, Typography,
 } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import CloseIcon from '@mui/icons-material/Close';
+import Alert from '@mui/material/Alert';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { animated, Transition } from 'react-spring';
+import { Transition as TransitionReact } from 'react-transition-group';
 import { arrLessonFront } from '../../../constants/lessonsFront';
 import { arrLessonBack } from '../../../constants/lessonsBack';
 import { PrevArrow, NextArrow } from './Arrows';
@@ -20,12 +23,27 @@ function LessonPage({ show }) {
   const { useEventListener } = useEvents();
   const classes = useStyles();
   const [isShowSlider, setShowSlider] = useState(false);
+  const [isShowAlert, setShowAlert] = useState(false);
+  const nodeRef = useRef(null);
   const [isLesson, setLesson] = useState<ILesson>({
     id: 1,
     title: '',
     url: '',
     elements: [],
   });
+
+  const duration = 300;
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+  };
+
+  const transitionStyles = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 },
+  };
   const settingsSlider = {
     dots: false,
     infinite: false,
@@ -48,8 +66,24 @@ function LessonPage({ show }) {
     }
   };
 
+  const getClipboard = (e) => {
+    const target = e.currentTarget;
+    const { parentNode } = target;
+    const pre = parentNode.querySelector('pre');
+
+    navigator.clipboard.writeText(pre.innerHTML);
+    setShowAlert(true);
+  };
+
   useEventListener('keydown', handler);
 
+  useEffect(() => {
+    if (isShowAlert) {
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 3000);
+    }
+  }, [isShowAlert]);
   useEffect(() => {
     if (show) {
       arrLessonFront.find((item) => (item.url === id
@@ -61,7 +95,6 @@ function LessonPage({ show }) {
         : false));
     }
   }, [id, show]);
-
   return (
     <Box component="div" className={classes.center}>
       <Transition
@@ -97,17 +130,18 @@ function LessonPage({ show }) {
                   </Box>
                   {elem.pre
                     && (
-                      <Box component="pre" className={classes.imgSlider}>
-                        {elem.pre}
-
+                      <Box component="div" className={classes.wrapperPre}>
                         <IconButton
                           color="primary"
-                          onClick={() => handler({ key: 'Escape' })}
+                          onClick={getClipboard}
                           className={classes.iconCopy}
                         >
                           <ContentCopyIcon />
                         </IconButton>
+                        <Box component="pre" className={classes.imgSlider}>
+                          {elem.pre}
 
+                        </Box>
                       </Box>
                     )}
                 </Box>
@@ -138,10 +172,39 @@ function LessonPage({ show }) {
               {item.title}
             </Typography>
             <Box component="p" className={classes.text}>{item.p}</Box>
-            {item.pre && <Box component="pre" className={classes.img}>{item.pre}</Box>}
+            {item.pre && (
+              <Box component="div" className={classes.wrapperPre}>
+                <IconButton
+                  color="primary"
+                  onClick={getClipboard}
+                  className={classes.iconCopy}
+                >
+                  <ContentCopyIcon />
+                </IconButton>
+                <Box component="pre" className={`${classes.img} pre`}>
+                  {item.pre}
+                </Box>
+              </Box>
+            )}
           </Box>
         ))
       }
+      <TransitionReact nodeRef={nodeRef} in={isShowAlert} timeout={duration}>
+        {(state) => (
+          <Alert
+            variant="filled"
+            severity="success"
+            ref={nodeRef}
+            className={classes.alert}
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state],
+            }}
+          >
+            Copy success!
+          </Alert>
+        )}
+      </TransitionReact>
     </Box>
   );
 }

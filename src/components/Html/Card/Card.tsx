@@ -13,7 +13,7 @@ function Card({ elements, title }: ICard) {
       <Typography component="h3" className={classes.title}>{title}</Typography>
       <List className={classes.list}>
         {elements && elements.map((item) => (
-          <ListItemButton key={item.id}>
+          <ListItemButton key={item.id} className={classes.listItem}>
             <NavLink to={item.url} className={classes.listLink}>
               {item.title}
             </NavLink>

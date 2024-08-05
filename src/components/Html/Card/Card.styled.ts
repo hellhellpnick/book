@@ -19,12 +19,17 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     transition: 'all 0.2s ease',
     textDecoration: 'none',
     width: '100%',
+    padding: 10,
 
     '@media(min-width: 1024px)': {
       '&:hover': {
         color: theme.colors.text.primary,
       },
     },
+  },
+
+  listItem: {
+    padding: '0 !important',
   },
 }));
 
