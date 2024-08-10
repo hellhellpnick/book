@@ -1,7 +1,7 @@
 import {
-  Box, Typography, TextField, Button,
+  Box, Typography, TextField,
 } from '@material-ui/core';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { arrCSS } from '../../constants/css';
 import Card from '../Html/Card/Card';
 import useStyles from '../Html/HTML.styled';
@@ -9,6 +9,40 @@ import Cube from './Cube/Cube';
 
 function CSSPage() {
   const classes = useStyles();
+  const [currentArray, setCurrentArray] = useState(arrCSS);
+  const [search, setSearch] = useState('');
+
+  function onCheckList() {
+    if (search) {
+      const newArray = arrCSS.reduce((acc, item) => {
+        // eslint-disable-next-line @typescript-eslint/no-shadow
+        const currentArray = [];
+
+        item.elements.forEach((element) => {
+          if (element.title.includes(search)) {
+            currentArray.push(element);
+          }
+        });
+
+        if (currentArray.length > 0) {
+          return [...acc, {
+            ...item,
+            elements: currentArray,
+          }];
+        }
+
+        return acc;
+      }, []);
+
+      return setCurrentArray(newArray);
+    }
+
+    return setCurrentArray(arrCSS);
+  }
+
+  useEffect(() => {
+    onCheckList();
+  }, [search]);
 
   return (
     <Box component="div" className={classes.center}>
@@ -29,14 +63,9 @@ function CSSPage() {
               label="Поиск"
               variant="outlined"
               className={classes.input}
+              value={search}
+              onChange={(e) => { setSearch(e.target.value); }}
             />
-            <Button
-              variant="outlined"
-              className={classes.btn}
-              color="default"
-            >
-              Поиск
-            </Button>
           </Box>
 
         </Box>
@@ -61,8 +90,8 @@ function CSSPage() {
         </Box>
       </Box>
       <Box component="div" className={classes.boxContent}>
-        {arrCSS
-          && arrCSS.map((item) => (
+        {currentArray
+          && currentArray.map((item) => (
             <Card
               key={item.id}
               elements={item.elements}

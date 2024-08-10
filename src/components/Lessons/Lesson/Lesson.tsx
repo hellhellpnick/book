@@ -1,3 +1,5 @@
+/* eslint-disable new-cap */
+/* eslint-disable jsx-a11y/aria-props */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
@@ -12,14 +14,15 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { animated, Transition } from 'react-spring';
 import { Transition as TransitionReact } from 'react-transition-group';
 import { arrHTMLFront } from '../../../constants/html';
+import { arrCssFront } from '../../../constants/css';
 import { arrLessonFront } from '../../../constants/lessonsFront';
-import { arrLessonBack } from '../../../constants/lessonsBack';
+// import { arrLessonBack } from '../../../constants/lessonsBack';
 import { PrevArrow, NextArrow } from './Arrows';
 import useEvents from '../../../hooks/useEvents';
 import useStyles from './Lesson.styled';
 import { ILesson } from '../../../modules/Lessons';
 
-function LessonPage({ show, html = false }) {
+function LessonPage({ show, html = false, css = false }) {
   const { id } = useParams();
   const { useEventListener } = useEvents();
   const classes = useStyles();
@@ -71,8 +74,10 @@ function LessonPage({ show, html = false }) {
     const target = e.currentTarget;
     const { parentNode } = target;
     const pre = parentNode.querySelector('pre');
+    const preAttr = parentNode.querySelector('.pre');
+    console.log(preAttr);
 
-    navigator.clipboard.writeText(pre.textContent);
+    navigator.clipboard.writeText(pre?.textContent || preAttr?.innerHTML);
     setShowAlert(true);
   };
 
@@ -88,6 +93,12 @@ function LessonPage({ show, html = false }) {
   useEffect(() => {
     if (html) {
       arrHTMLFront.find((item) => (item.url === id
+        ? setLesson(item)
+        : false));
+    }
+
+    if (css) {
+      arrCssFront.find((item) => (item.url === id
         ? setLesson(item)
         : false));
     }
@@ -123,15 +134,27 @@ function LessonPage({ show, html = false }) {
             </IconButton>
             <Slider {...settingsSlider}>
               {isLesson.elements.map((elem) => (
-                <Box component="div" key={elem.id} className={classes.slider}>
+                <Box component="div" key={elem?.id} className={classes.slider}>
                   <Typography component="h3" className={classes.title}>
-                    {elem.title}
+                    {elem?.title}
                   </Typography>
                   <Box component="p" className={classes.text}>
-                    {elem.p}
+                    {elem?.p}
 
                   </Box>
-                  {elem.pre
+                  {
+                    elem?.attributes && elem?.attributes.length > 0 && elem?.attributes.map((e) => (
+                      <Box component="div" key={e.id} className={classes.slider}>
+                        <Typography component="h3" className={classes.titleAttr}>
+                          {e.title}
+                        </Typography>
+                        <Box component="p" className={classes.textAttr}>
+                          {e.p}
+                        </Box>
+                      </Box>
+                    ))
+                  }
+                  {elem?.pre
                     && (
                       <Box component="div" className={classes.wrapperPre}>
                         <IconButton
@@ -142,7 +165,7 @@ function LessonPage({ show, html = false }) {
                           <ContentCopyIcon />
                         </IconButton>
                         <Box component="pre" className={classes.imgSlider}>
-                          {elem.pre}
+                          {elem?.pre}
 
                         </Box>
                       </Box>
@@ -170,14 +193,24 @@ function LessonPage({ show, html = false }) {
       {
         !!isLesson.elements.length
         && isLesson.elements.map((item) => (
-          <Box component="div" key={item.id}>
+          <Box component="div" key={item?.id || new Date().getTime()}>
             <Typography component="h3" className={classes.title}>
-              {item.title}
+              {item?.title}
             </Typography>
-            <Box component="p" className={classes.text}>{item.p}</Box>
+            <Box component="p" className={classes.text}>{item?.p}</Box>
+            {item?.attributes && item?.attributes.length > 0 && item?.attributes.map((e) => (
+              <Box component="div" key={e.id} className={classes.sliderAttr}>
+                <Typography component="h3" className={classes.titleAttr}>
+                  {e.title}
+                </Typography>
+                <Box component="p" className={classes.textAttr}>
+                  {e.p}
+                </Box>
+              </Box>
+            ))}
             {
-              item.html && (
-                <Box component="div" className={classes.wrapperPre}>
+              item?.html && (
+                <Box component="div" aria-label="pre" className={classes.wrapperPre}>
                   <IconButton
                     color="primary"
                     onClick={getClipboard}
@@ -185,13 +218,11 @@ function LessonPage({ show, html = false }) {
                   >
                     <ContentCopyIcon />
                   </IconButton>
-                  <Box component="div" dangerouslySetInnerHTML={{ __html: item.html }} className={`${classes.img} pre`}>
-                    {item.pre}
-                  </Box>
+                  <Box component="div" dangerouslySetInnerHTML={{ __html: item?.html }} className={`${classes.img} pre`} />
                 </Box>
               )
             }
-            {item.pre && (
+            {item?.pre && (
               <Box component="div" className={classes.wrapperPre}>
                 <IconButton
                   color="primary"
@@ -201,7 +232,7 @@ function LessonPage({ show, html = false }) {
                   <ContentCopyIcon />
                 </IconButton>
                 <Box component="pre" className={`${classes.img} pre`}>
-                  {item.pre}
+                  {item?.pre}
                 </Box>
               </Box>
             )}

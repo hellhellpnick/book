@@ -9,6 +9,11 @@ interface ILesson {
     id: number,
     pre: string,
     html?: string,
+    attributes?: {
+      title: string,
+      p: string,
+      id: number,
+    }[],
   }[]
 }
 

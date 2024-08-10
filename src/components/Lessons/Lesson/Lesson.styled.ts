@@ -24,6 +24,27 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     letterSpacing: 1.2,
     textAlign: 'justify',
   },
+  textAttr: {
+    fontSize: 20,
+    fontWeight: 500,
+    color: theme.colors.text.primary,
+    marginBottom: 20,
+    lineHeight: 1.5,
+    letterSpacing: 1.2,
+    paddingLeft: 20,
+    textAlign: 'justify',
+  },
+
+  titleAttr: {
+    fontSize: 20,
+    fontWeight: 500,
+    color: theme.colors.text.main,
+    marginBottom: 30,
+    padding: 5,
+    display: 'inline-block',
+    backgroundColor: theme.colors.backgroundArticle.main,
+    textTransform: 'uppercase',
+  },
 
   title: {
     fontSize: 30,
@@ -142,6 +163,18 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
     maxWidth: '90%',
     width: '100%',
     padding: 20,
+
+    '@media(max-width: 1024px)': {
+      maxWidth: '100%',
+    },
+  },
+
+  sliderAttr: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    maxWidth: '90%',
+    width: '100%',
 
     '@media(max-width: 1024px)': {
       maxWidth: '100%',
