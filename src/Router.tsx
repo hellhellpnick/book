@@ -65,7 +65,7 @@ function Router() {
         <Route
           path={routes.front.html.primary}
           element={
-            <HTMLTag title="Book - HTML Tag Front-end" show />
+            <HTMLTag title="Book - HTML Tag Front-end" show html />
           }
         />
         <Route

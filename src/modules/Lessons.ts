@@ -7,7 +7,8 @@ interface ILesson {
     title: string,
     p: string,
     id: number,
-    pre: string
+    pre: string,
+    html?: string,
   }[]
 }
 

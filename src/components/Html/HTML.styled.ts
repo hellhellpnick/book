@@ -41,8 +41,7 @@ const useStyles = makeStyles((theme: CustomTheme) => ({
   input: {
     outline: 'none',
     border: `1px solid ${theme.colors.text.main}`,
-    borderTopLeftRadius: '5px',
-    borderBottomLeftRadius: '5px',
+    borderRadius: '5px',
     width: '100%',
 
     '& input': { color: theme.colors.text.main },

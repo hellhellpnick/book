@@ -11,6 +11,7 @@ import Alert from '@mui/material/Alert';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { animated, Transition } from 'react-spring';
 import { Transition as TransitionReact } from 'react-transition-group';
+import { arrHTMLFront } from '../../../constants/html';
 import { arrLessonFront } from '../../../constants/lessonsFront';
 import { arrLessonBack } from '../../../constants/lessonsBack';
 import { PrevArrow, NextArrow } from './Arrows';
@@ -18,7 +19,7 @@ import useEvents from '../../../hooks/useEvents';
 import useStyles from './Lesson.styled';
 import { ILesson } from '../../../modules/Lessons';
 
-function LessonPage({ show }) {
+function LessonPage({ show, html = false }) {
   const { id } = useParams();
   const { useEventListener } = useEvents();
   const classes = useStyles();
@@ -71,7 +72,7 @@ function LessonPage({ show }) {
     const { parentNode } = target;
     const pre = parentNode.querySelector('pre');
 
-    navigator.clipboard.writeText(pre.innerHTML);
+    navigator.clipboard.writeText(pre.textContent);
     setShowAlert(true);
   };
 
@@ -85,15 +86,17 @@ function LessonPage({ show }) {
     }
   }, [isShowAlert]);
   useEffect(() => {
-    if (show) {
-      arrLessonFront.find((item) => (item.url === id
-        ? setLesson(item)
-        : false));
-    } else {
-      arrLessonBack.find((item) => (item.url === id
+    if (html) {
+      arrHTMLFront.find((item) => (item.url === id
         ? setLesson(item)
         : false));
     }
+    arrLessonFront.find((item) => (item.url === id
+      ? setLesson(item)
+      : false));
+    // arrLessonBack.find((item) => (item.url === id
+    //   ? setLesson(item)
+    //   : false));
   }, [id, show]);
   return (
     <Box component="div" className={classes.center}>
@@ -172,6 +175,22 @@ function LessonPage({ show }) {
               {item.title}
             </Typography>
             <Box component="p" className={classes.text}>{item.p}</Box>
+            {
+              item.html && (
+                <Box component="div" className={classes.wrapperPre}>
+                  <IconButton
+                    color="primary"
+                    onClick={getClipboard}
+                    className={classes.iconCopy}
+                  >
+                    <ContentCopyIcon />
+                  </IconButton>
+                  <Box component="div" dangerouslySetInnerHTML={{ __html: item.html }} className={`${classes.img} pre`}>
+                    {item.pre}
+                  </Box>
+                </Box>
+              )
+            }
             {item.pre && (
               <Box component="div" className={classes.wrapperPre}>
                 <IconButton

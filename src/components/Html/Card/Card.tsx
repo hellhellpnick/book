@@ -3,9 +3,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useStyles from './Card.styled';
-import { ICard } from '../../../modules/Cards';
 
-function Card({ elements, title }: ICard) {
+function Card({ elements, title }) {
   const classes = useStyles();
 
   return (

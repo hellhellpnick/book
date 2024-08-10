@@ -1,5 +1,5 @@
 interface ICard {
-  elements: { id: number, title: string; url: string; }[],
+  elements: { id?: number, title?: string; url?: string; }[],
   title: string
 }
 
