@@ -41,6 +41,7 @@ const Home = lazy(() => import('./views/Home/Home'));
 const HTML = lazy(() => import('./views/Html/HTML'));
 const HTMLTag = lazy(() => import('./views/Html/Html/HTMLTag'));
 const CSS = lazy(() => import('./views/Css/CSS'));
+const JS = lazy(() => import('./views/JS/JS'));
 const CSSClass = lazy(() => import('./views/Css/css/CSSClass'));
 const PHP = lazy(() => import('./views/PHP/PHP'));
 const Lessons = lazy(() => import('./views/Lessons/Lessons'));
@@ -73,6 +74,12 @@ function Router() {
           path={routes.front.css.main}
           element={
             <CSS title="Book - CSS" />
+          }
+        />
+        <Route
+          path={routes.front.js.main}
+          element={
+            <JS title="Book - CSS" />
           }
         />
         <Route

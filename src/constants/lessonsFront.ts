@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 const arrLessonsFront = [
   {
     id: 1,
@@ -43,6 +44,21 @@ const arrLessonsFront = [
         id: 5,
         title: 'Lesson 7',
         url: 'lesson7',
+      },
+      {
+        id: 6,
+        title: 'Lesson 8',
+        url: 'lesson8',
+      },
+      {
+        id: 7,
+        title: 'Lesson 9',
+        url: 'lesson9',
+      },
+      {
+        id: 8,
+        title: 'Lesson 10',
+        url: 'lesson10',
       },
     ],
   },
@@ -2614,6 +2630,1001 @@ const arrLessonFront = [
             background-color: lightblue;
           }
         }`,
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: 'Работа с картинками',
+    url: 'lesson8',
+    elements: [
+      {
+        id: 1,
+        title: 'Работа с картинками',
+        p: `Картинки не отъемлемая часть
+        сайта. Они использую на любом сайте без исключение. Оно помогает пользователю сориентироваться по сайту `,
+        pre: '',
+      },
+      {
+        id: 2,
+        title: 'background',
+        p: `Это свойство CSS,
+        которое помогает нам управлять изображением. 
+        Данное свойство применяет сразу ко всем его подсвойствам. Таким как: background-attachment
+background-clip
+background-color
+background-image
+background-origin
+background-position
+background-repeat
+background-size`,
+        pre: `/* Using a <background-color> */
+background: green;
+
+/* Using a <bg-image> and <repeat-style> */
+background: url("test.jpg") repeat-y;
+
+/* Using a <box> and <background-color> */
+background: border-box red;
+
+/* A single image, centered and scaled */
+background: no-repeat center/80% url("../img/image.png");
+
+/* Global values */
+background: inherit;
+background: initial;
+background: revert;
+background: revert-layer;
+background: unset;`,
+      },
+      {
+        id: 3,
+        title: 'background-attachment',
+        p: `Свойство CSS background-attachment определяет, будет ли положение фонового изображения фиксированным 
+        в области просмотра или оно будет прокручиваться вместе с содержащим его блоком.`,
+        pre: `/* Keyword values */
+background-attachment: scroll;
+background-attachment: fixed;
+background-attachment: local;
+
+/* Global values */
+background-attachment: inherit;
+background-attachment: initial;
+background-attachment: revert;
+background-attachment: revert-layer;
+background-attachment: unset;`,
+      },
+      {
+        id: 4,
+        title: 'background-blend-mode',
+        p: `Свойство CSS background-blend-mode устанавливает, как фоновые изображения элемента
+         должны смешиваться друг с другом и с цветом фона элемента.`,
+        pre: `/* One value */
+background-blend-mode: normal;
+
+/* Two values, one per background */
+background-blend-mode: darken, luminosity;
+
+/* Global values */
+background-blend-mode: inherit;
+background-blend-mode: initial;
+background-blend-mode: revert;
+background-blend-mode: revert-layer;
+background-blend-mode: unset;
+`,
+      },
+      {
+        id: 5,
+        title: 'background-clip',
+        p: `Свойство CSS background-clip определяет, будет ли фон элемента 
+        выступать за пределы его рамки, поля отступа или поля содержимого.`,
+        pre: `/* Keyword values */
+background-clip: border-box;
+background-clip: padding-box;
+background-clip: content-box;
+background-clip: text;
+
+/* Global values */
+background-clip: inherit;
+background-clip: initial;
+background-clip: revert;
+background-clip: revert-layer;
+background-clip: unset;
+
+`,
+      },
+      {
+        id: 6,
+        title: 'background-color',
+        p: `CSS-свойство background-color
+         задает цвет фона элемента.`,
+        pre: `/* Keyword values */
+background-color: red;
+background-color: indigo;
+
+/* Hexadecimal value */
+background-color: #bbff00; /* Fully opaque */
+background-color: #bf0; /* Fully opaque shorthand */
+background-color: #11ffee00; /* Fully transparent */
+background-color: #1fe0; /* Fully transparent shorthand */
+background-color: #11ffeeff; /* Fully opaque */
+background-color: #1fef; /* Fully opaque shorthand */
+
+/* RGB value */
+background-color: rgb(255 255 128); /* Fully opaque */
+background-color: rgb(117 190 218 / 50%); /* 50% transparent */
+
+/* HSL value */
+background-color: hsl(50 33% 25%); /* Fully opaque */
+background-color: hsl(50 33% 25% / 75%); /* 75% opaque, i.e. 25% transparent */
+
+/* Special keyword values */
+background-color: currentcolor;
+background-color: transparent;
+
+/* Global values */
+background-color: inherit;
+background-color: initial;
+background-color: revert;
+background-color: revert-layer;
+background-color: unset;
+
+`,
+      },
+      {
+        id: 7,
+        title: 'background-color',
+        p: `CSS-свойство background-color
+         задает цвет фона элемента.`,
+        pre: `/* Keyword values */
+background-color: red;
+background-color: indigo;
+
+/* Hexadecimal value */
+background-color: #bbff00; /* Fully opaque */
+background-color: #bf0; /* Fully opaque shorthand */
+background-color: #11ffee00; /* Fully transparent */
+background-color: #1fe0; /* Fully transparent shorthand */
+background-color: #11ffeeff; /* Fully opaque */
+background-color: #1fef; /* Fully opaque shorthand */
+
+/* RGB value */
+background-color: rgb(255 255 128); /* Fully opaque */
+background-color: rgb(117 190 218 / 50%); /* 50% transparent */
+
+/* HSL value */
+background-color: hsl(50 33% 25%); /* Fully opaque */
+background-color: hsl(50 33% 25% / 75%); /* 75% opaque, i.e. 25% transparent */
+
+/* Special keyword values */
+background-color: currentcolor;
+background-color: transparent;
+
+/* Global values */
+background-color: inherit;
+background-color: initial;
+background-color: revert;
+background-color: revert-layer;
+background-color: unset;
+
+`,
+      },
+      {
+        id: 8,
+        title: 'background-image',
+        p: `Свойство CSS background-image задает одно или несколько 
+        фоновых изображений для элемента.`,
+        pre: `/* single image */
+background-image: linear-gradient(black, white);
+background-image: url("catfront.png");
+
+/* multiple images */
+background-image: radial-gradient(circle, #0000 45%, #000f 48%),
+  radial-gradient(ellipse farthest-corner, #fc1c14 20%, #cf15cf 80%);
+
+/* Global values */
+background-image: inherit;
+background-image: initial;
+background-image: revert;
+background-image: revert-layer;
+background-image: unset;
+
+`,
+      },
+      {
+        id: 9,
+        title: 'background-origin',
+        p: `Свойство CSS background-origin
+         задает начало координат фона: от начала границы, внутри границы или внутри отступа.`,
+        pre: `/* Keyword values */
+background-origin: border-box;
+background-origin: padding-box;
+background-origin: content-box;
+
+/* Global values */
+background-origin: inherit;
+background-origin: initial;
+background-origin: revert;
+background-origin: revert-layer;
+background-origin: unset;
+
+`,
+      },
+      {
+        id: 10,
+        title: 'background-position',
+        p: `Свойство CSS background-position задает начальную позицию для каждого фонового изображения. 
+        Позиция задается относительно слоя позиции, заданного background-origin.`,
+        pre: `/* Keyword values */
+background-position: top;
+background-position: bottom;
+background-position: left;
+background-position: right;
+background-position: center;
+
+/* <percentage> values */
+background-position: 25% 75%;
+
+/* <length> values */
+background-position: 0 0;
+background-position: 1cm 2cm;
+background-position: 10ch 8em;
+
+/* Multiple images */
+background-position:
+  0 0,
+  center;
+
+/* Edge offsets values */
+background-position: bottom 10px right 20px;
+background-position: right 3em bottom 10px;
+background-position: bottom 10px right;
+background-position: top right 10px;
+
+/* Global values */
+background-position: inherit;
+background-position: initial;
+background-position: revert;
+background-position: revert-layer;
+background-position: unset;
+
+`,
+      },
+      {
+        id: 11,
+        title: 'background-repeat',
+        p: `Свойство CSS background-repeat задает, как повторяются
+         фоновые изображения. Фоновое изображение может повторяться по горизонтальной и вертикальной осям или не повторяться вообще.`,
+        pre: `/* Keyword values */
+background-repeat: repeat;
+background-repeat: repeat-x;
+background-repeat: repeat-y;
+background-repeat: space;
+background-repeat: round;
+background-repeat: no-repeat;
+
+/* Two-value syntax: horizontal | vertical */
+background-repeat: repeat space;
+background-repeat: repeat repeat;
+background-repeat: round space;
+background-repeat: no-repeat round;
+
+/* Global values */
+background-repeat: inherit;
+background-repeat: initial;
+background-repeat: revert;
+background-repeat: revert-layer;
+background-repeat: unset;
+
+`,
+      },
+      {
+        id: 12,
+        title: 'background-size',
+        p: `Свойство CSS background-size задает размер фонового изображения элемента. Изображение можно 
+        оставить в его естественном размере, растянуть или ограничить, чтобы оно соответствовало доступному пространству.`,
+        pre: `/* Keyword values */
+background-size: cover;
+background-size: contain;
+
+/* One-value syntax */
+/* the width of the image (height becomes 'auto') */
+background-size: 50%;
+background-size: 3.2em;
+background-size: 12px;
+background-size: auto;
+
+/* Two-value syntax */
+/* first value: width of the image, second value: height */
+background-size: 50% auto;
+background-size: 3em 25%;
+background-size: auto 6px;
+background-size: auto auto;
+
+/* Multiple backgrounds */
+background-size: auto, auto; /* Not to be confused with  */
+background-size: 50%, 25%, 25%;
+background-size: 6px, auto, contain;
+
+/* Global values */
+background-size: inherit;
+background-size: initial;
+background-size: revert;
+background-size: revert-layer;
+background-size: unset;
+
+`,
+      },
+
+      {
+        id: 13,
+        title: 'object-fit',
+        p: `Свойство CSS object-fit устанавливает, как 
+        содержимое заменяемого элемента, например <img> или <video>, должно изменяться в размерах, чтобы соответствовать его контейнеру.`,
+        pre: `object-fit: contain;
+object-fit: cover;
+object-fit: fill;
+object-fit: none;
+object-fit: scale-down;
+
+/* Global values */
+object-fit: inherit;
+object-fit: initial;
+object-fit: revert;
+object-fit: revert-layer;
+object-fit: unset;
+
+`,
+      },
+      {
+        id: 14,
+        title: 'object-position',
+        p: `Свойство CSS object-position определяет выравнивание содержимого выбранного заменяемого элемента в пределах блока элемента. Области блока, которые не закрыты объектом заменяемого элемента, будут показывать фон элемента.
+
+Вы можете настроить, как внутренний размер объекта заменяемого элемента (то есть его естественный размер) корректируется для вписывания в блок элемента, используя свойство object-fit.`,
+        pre: `/* Keyword values */
+object-position: top;
+object-position: bottom;
+object-position: left;
+object-position: right;
+object-position: center;
+
+/* <percentage> values */
+object-position: 25% 75%;
+
+/* <length> values */
+object-position: 0 0;
+object-position: 1cm 2cm;
+object-position: 10ch 8em;
+
+/* Edge offsets values */
+object-position: bottom 10px right 20px;
+object-position: right 3em bottom 10px;
+object-position: top 0 right 10px;
+
+/* Global values */
+object-position: inherit;
+object-position: initial;
+object-position: revert;
+object-position: revert-layer;
+object-position: unset;
+
+`,
+      },
+      {
+        id: 15,
+        title: 'mix-blend-mode',
+        p: `Свойство CSS mix-blend-mode устанавливает, как содержимое элемента должно смешиваться с
+         содержимым родительского элемента и фоном элемента.`,
+        pre: `/* Keyword values */
+mix-blend-mode: normal;
+mix-blend-mode: multiply;
+mix-blend-mode: screen;
+mix-blend-mode: overlay;
+mix-blend-mode: darken;
+mix-blend-mode: lighten;
+mix-blend-mode: color-dodge;
+mix-blend-mode: color-burn;
+mix-blend-mode: hard-light;
+mix-blend-mode: soft-light;
+mix-blend-mode: difference;
+mix-blend-mode: exclusion;
+mix-blend-mode: hue;
+mix-blend-mode: saturation;
+mix-blend-mode: color;
+mix-blend-mode: luminosity;
+mix-blend-mode: plus-darker;
+mix-blend-mode: plus-lighter;
+
+/* Global values */
+mix-blend-mode: inherit;
+mix-blend-mode: initial;
+mix-blend-mode: revert;
+mix-blend-mode: revert-layer;
+mix-blend-mode: unset;
+
+`,
+      },
+      {
+        id: 17,
+        title: 'Домашние задание 1',
+        p: `Свойство CSS mix-blend-mode устанавливает, как содержимое элемента должно смешиваться с
+         содержимым родительского элемента и фоном элемента.`,
+        pre: `Задание:
+          Создайте веб-страницу с секцией (элементом div), которая будет содержать 
+          заголовок и текст. Ваша задача — используя свойство background, создать уникальный фон для этой секции, включающий:
+
+          1. Фоновое изображение с наложением полупрозрачного цветного слоя.
+          2. Позиционирование и размер фонового изображения так, чтобы оно красиво вписывалось в секцию.
+          3. Цвет фона, который будет виден только в тех местах, где изображение не покрывает секцию.
+          4. Фиксированное поведение фона при прокрутке страницы.
+          5. Задание области отображения фона внутри элемента.
+
+          Дополнительно: Используйте свойство background-clip, чтобы фоновое 
+          изображение отображалось только в пределах текста или внутри секции.
+`,
+      },
+      {
+        id: 18,
+        title: 'Домашние задание 2',
+        p: `Создайте галерею изображений с элементами, каждый из которых представляет собой 
+        изображение внутри контейнера фиксированных размеров. Используя свойства object-fit и object-position, добейтесь того, чтобы изображения вписывались в контейнеры различным образом, создавая интересные композиции.`,
+        pre: `Основная задача:
+1. Контейнеры разного размера с одинаковым соотношением сторон.0
+2. Изображения в каждом контейнере должны использовать различные значения
+ object-fit и object-position для достижения разных эффектов отображения.
+
+Дополнительно:
+Используйте свойство mix-blend-mode, чтобы наложить изображения друг на друга, 
+создавая интересные эффекты смешивания. Включите по крайней мере один пример, 
+где изображение взаимодействует с фоном контейнера.
+`,
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: 'Работа с формами',
+    url: 'lesson9',
+    elements: [
+
+      {
+        id: 1,
+        title: 'Form',
+        p: `HTML-элемент <form> представляет собой раздел документа, содержащий интерактивные элементы управления для отправки информации.
+        Так же, мы сегодня попробуем повторить данную форму https://codepen.io/leonam-silva-de-souza/pen/QWXaBvW`,
+        pre: `
+        <form action="" method="get" class="form-example">
+  <div class="form-example">
+    <label for="name">Enter your name: </label>
+    <input type="text" name="name" id="name" required />
+  </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required />
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!" />
+  </div>
+</form>
+`,
+      },
+      {
+        id: 2,
+        title: 'input',
+        p: 'HTML-элемент <input> используется для создания интерактивных элементов управления для веб-форм с целью приема данных от пользователя; доступно большое разнообразие типов входных данных и виджетов управления в зависимости от устройства и пользовательского агента. Элемент <input> является одним из самых мощных и сложных во всем HTML из-за огромного количества комбинаций типов входных данных и атрибутов.',
+        pre: `<form action="page.html" method="post">
+  <label>
+    Fruit:
+    <input type="text" name="fruit" dirname="fruit-dir" value="cherry" />
+  </label>
+  <input type="submit" />
+</form>
+<!-- page.html?fruit=cherry&fruit-dir=ltr -->
+`,
+      },
+      {
+        id: 3,
+        title: 'Типы input',
+        p: 'Инпут имеет много разных типов для разных целей. Вот основные типы:',
+        pre: `
+          button
+          checkbox
+          color
+          date
+          datetime-local
+          email
+          file
+          hidden
+          image
+          month
+        number
+        password
+        radio
+        range
+        reset
+        search
+        submit
+        tel
+        text
+        time
+        url
+        week
+        `,
+      },
+      {
+        id: 4,
+        title: 'Аттрибуты инпута',
+        p: `Элемент <input> настолько мощный из-за своих атрибутов; атрибут type, описанный с примерами выше, является самым важным. Поскольку каждый элемент <input>, независимо от типа, основан на интерфейсе HTMLInputElement, они технически совместно используют один и тот же набор атрибутов. Однако в действительности большинство атрибутов оказывают влияние только на определенное подмножество типов ввода. Кроме того, то, как некоторые атрибуты влияют на ввод, зависит от типа ввода, влияя на различные типы ввода по-разному.
+В этом разделе представлена ​​таблица со списком всех атрибутов с кратким описанием. За этой таблицей следует список, описывающий каждый атрибут более подробно, а также типы ввода, с которыми они связаны. Те, которые являются общими для большинства или всех типов ввода, определены более подробно ниже. Атрибуты, которые являются уникальными для определенных типов ввода — или атрибуты, которые являются общими для всех типов ввода, но имеют особое поведение при использовании для данного типа ввода — вместо этого документируются на страницах этих типов.`,
+        pre: `К примеру:
+        Аттрибут accept используется в комбинации типом file и это нужно для 
+        "Подсказка для ожидаемого типа файла в элементах управления загрузкой файлов"
+        `,
+      },
+      {
+        id: 5,
+        title: 'select',
+        p: `HTML-элемент <select> представляет собой элемент управления, предоставляющий меню параметров.
+        В приведенном выше примере показано типичное использование <select>. Ему присваивается атрибут id, позволяющий связать его с <label> для обеспечения доступности, а также атрибут name, представляющий имя связанной точки данных, отправленной на сервер. Каждый пункт меню определяется элементом <option>, вложенным в <select>.
+
+Каждый элемент <option> должен иметь атрибут value, содержащий значение данных для отправки на сервер при выборе этого пункта. Если атрибут value не включен, значением по умолчанию будет текст, содержащийся внутри элемента. Вы можете включить атрибут selected в элемент <option>, чтобы сделать его выбранным по умолчанию при первой загрузке страницы.`,
+        pre: `
+        <label for="pet-select">Choose a pet:</label>
+
+<select name="pets" id="pet-select">
+  <option value="">--Please choose an option--</option>
+  <option value="dog">Dog</option>
+  <option value="cat">Cat</option>
+  <option value="hamster">Hamster</option>
+  <option value="parrot">Parrot</option>
+  <option value="spider">Spider</option>
+  <option value="goldfish">Goldfish</option>
+</select>
+
+        `,
+      },
+      {
+        id: 6,
+        title: '::after',
+        p: `В CSS ::after создает псевдоэлемент, который является последним дочерним элементом выбранного элемента. Он часто используется для добавления косметического содержимого к элементу со свойством content. По умолчанию он встроенный.
+V CSS ::after sozdayet psevdoele`,
+        pre: `a::after {
+  content: ' (' attr(href) ')';
+}
+
+.dead-link {
+  text-decoration: line-through;
+}
+
+.dead-link::after {
+  content: url('../../media/warning.svg');
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+        `,
+      },
+      {
+        id: 7,
+        title: '::before',
+        p: 'В CSS ::before создает псевдоэлемент, который является первым дочерним элементом выбранного элемента. Он часто используется для добавления косметического содержимого к элементу со свойством content. По умолчанию он встроенный.',
+        pre: `a {
+  color: #0000ff;
+  text-decoration: none;
+}
+
+a::before {
+  content: '🔗';
+}
+
+.local-link::before {
+  content: url('../../media/examples/firefox-logo.svg');
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+        `,
+      },
+      {
+        id: 8,
+        title: 'Домашнее задание',
+        p: 'Задача: Создать форму с кастомными стилями для чекбоксов и радиокнопок',
+        pre: `
+1. Форма:
+
+Создайте форму, которая включает:
+Имя
+Электронную почту
+Пол (с выбором между радиокнопками)
+Согласие с условиями (чекбокс)
+Выбор интересов (мульти-чекбоксы)
+
+2. Кастомные элементы:
+
+Оформите радиокнопки и чекбоксы так, чтобы они выглядели как пользовательские элементы 
+(например, квадратные или круги, с уникальным дизайном).
+Используйте только CSS для стилизации. Можно использовать псевдоэлементы, такие как 
+::before и ::after, для создания дополнительных эффектов.
+
+3. Взаимодействие:
+
+При наведении на радиокнопку или чекбокс должно происходить изменение внешнего вида 
+(например, изменение цвета границы или фона).
+При выборе элемента должен меняться его вид, чтобы чётко было видно, что элемент выбран.
+
+4. Обратная связь:
+
+Добавьте визуальную обратную связь, если форма отправляется без заполнения 
+обязательных полей (например, выделите незаполненные поля красной рамкой).
+
+5. Дополнительно:
+
+Добавьте анимацию при переключении состояний радиокнопок и чекбоксов.
+Стили должны адаптироваться под разные размеры экрана (адаптивность).`,
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: 'Анимации',
+    url: 'lesson10',
+    elements: [
+      {
+        id: 1,
+        title: 'CSS-анимации',
+        p: `CSS-анимации позволяют анимировать переходы от одной конфигурации CSS стилей к другой. CSS-анимации состоят из двух компонентов: стилевое описание анимации и набор ключевых кадров, определяющих начальное, конечное и, возможно, промежуточное состояние анимируемых стилей.
+`,
+        pre: `
+        Есть три преимущества CSS-анимации перед традиционными способами:
+
+        1. Простота использования для простых анимаций; вы можете создать анимацию, 
+        не зная JavaScript.
+        2. Анимации будут хорошо работать даже при умеренных нагрузках системы. Простые анимации 
+        на JavaScript, если они плохо написаны, часто выполняются плохо. Движок может использовать 
+        frame-skipping и другие техники, чтобы сохранить производительность на таком высоком уровне .
+        3. Позволяет браузеру контролировать последовательность анимации, тем самым оптимизируя 
+        производительность и эффективность браузера. Например, уменьшая частоту обновления кадров 
+        анимации в непросматриваемых в данный момент вкладках.`,
+      },
+      {
+        id: 2,
+        title: 'transition',
+        p: 'Свойство CSS transition является сокращенным свойством для transition-property, transition-duration, transition-timing-function, transition-delay и transition-behavior.',
+        pre: `
+        /* Apply to 1 property */
+        /* property name | duration */
+        transition: margin-right 4s;
+
+        /* property name | duration | delay */
+        transition: margin-right 4s 1s;
+
+        /* property name | duration | easing function */
+        transition: margin-right 4s ease-in-out;
+
+        /* property name | duration | easing function | delay */
+        transition: margin-right 4s ease-in-out 1s;
+
+        /* property name | duration | behavior */
+        transition: display 4s allow-discrete;
+
+        /* Apply to 2 properties */
+        transition:
+          margin-right 4s,
+          color 1s;
+
+        /* Apply to all changed properties */
+        transition: all 0.5s ease-out allow-discrete;
+        transition: 200ms linear 50ms;
+
+        /* Global values */
+        transition: inherit;
+        transition: initial;
+        transition: revert;
+        transition: revert-layer;
+        transition: unset;
+        `,
+      },
+      {
+        id: 3,
+        title: 'transition-behavior',
+        p: 'Свойство CSS transition-behavior определяет, будут ли запущены переходы для свойств, поведение анимации которых является дискретным.',
+        pre: `/* Keyword values */
+transition-behavior: allow-discrete;
+transition-behavior: normal;
+
+/* Global values */
+transition-behavior: inherit;
+transition-behavior: initial;
+transition-behavior: revert;
+transition-behavior: revert-layer;
+transition-behavior: unset;
+`,
+      },
+      {
+        id: 4,
+        title: 'transition-delay',
+        p: `
+          The transition-delay CSS property specifies the duration to wait before starting a property's transition effect when its value changes.
+        `,
+        pre: `
+          /* <time> values */
+transition-delay: 3s;
+transition-delay: 2s, 4ms;
+
+/* Global values */
+transition-delay: inherit;
+transition-delay: initial;
+transition-delay: revert;
+transition-delay: revert-layer;
+transition-delay: unset;
+
+        `,
+      },
+      {
+        id: 5,
+        title: 'transition-duration',
+        p: 'Свойство CSS transition-duration устанавливает длительность анимации перехода. По умолчанию значение равно 0 с, что означает, что анимация не будет выполняться.',
+        pre: `
+        /* <time> values */
+transition-duration: 6s;
+transition-duration: 120ms;
+transition-duration: 1s, 15s;
+transition-duration: 10s, 30s, 230ms;
+
+/* Global values */
+transition-duration: inherit;
+transition-duration: initial;
+transition-duration: revert;
+transition-duration: revert-layer;
+transition-duration: unset;
+`,
+      },
+      {
+        id: 6,
+        title: 'transition-property',
+        p: 'Свойство CSS transition-property задает свойства CSS, к которым следует применить эффект перехода.',
+        pre: `
+        /* Keyword values */
+transition-property: none;
+transition-property: all;
+
+/* <custom-ident> values */
+transition-property: test_05;
+transition-property: -specific;
+transition-property: sliding-vertically;
+
+/* Multiple values */
+transition-property: test1, animation4;
+transition-property: all, height, color;
+transition-property:
+  all,
+  -moz-specific,
+  sliding;
+
+/* Global values */
+transition-property: inherit;
+transition-property: initial;
+transition-property: revert;
+transition-property: revert-layer;
+transition-property: unset;
+`,
+      },
+      {
+        id: 7,
+        title: 'transition-timing-function',
+        p: 'Свойство CSS transition-timing-function устанавливает, как вычисляются промежуточные значения для свойств CSS, на которые влияет эффект перехода.',
+        pre: `
+        /* Keyword values */
+transition-timing-function: ease;
+transition-timing-function: ease-in;
+transition-timing-function: ease-out;
+transition-timing-function: ease-in-out;
+transition-timing-function: linear;
+transition-timing-function: step-start;
+transition-timing-function: step-end;
+
+/* Function values */
+transition-timing-function: steps(4, jump-end);
+transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+
+/* Steps Function keywords */
+transition-timing-function: steps(4, jump-start);
+transition-timing-function: steps(10, jump-end);
+transition-timing-function: steps(20, jump-none);
+transition-timing-function: steps(5, jump-both);
+transition-timing-function: steps(6, start);
+transition-timing-function: steps(8, end);
+
+/* Multiple easing functions */
+transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1, 0.1);
+
+/* Global values */
+transition-timing-function: inherit;
+transition-timing-function: initial;
+transition-timing-function: revert;
+transition-timing-function: revert-layer;
+transition-timing-function: unset;
+`,
+      },
+      {
+        id: 8,
+        title: 'transform',
+        p: 'Свойство CSS transform позволяет вращать, масштабировать, наклонять или переводить элемент. Оно изменяет координатное пространство модели визуального форматирования CSS.',
+        pre: `
+        /* Keyword values */
+transform: none;
+
+/* Function values */
+transform: matrix(1, 2, 3, 4, 5, 6);
+transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+transform: perspective(17px);
+transform: rotate(0.5turn);
+transform: rotate3d(1, 2, 3, 10deg);
+transform: rotateX(10deg);
+transform: rotateY(10deg);
+transform: rotateZ(10deg);
+transform: translate(12px, 50%);
+transform: translate3d(12px, 50%, 3em);
+transform: translateX(2em);
+transform: translateY(3in);
+transform: translateZ(2px);
+transform: scale(2, 0.5);
+transform: scale3d(2.5, 1.2, 0.3);
+transform: scaleX(2);
+transform: scaleY(0.5);
+transform: scaleZ(0.3);
+transform: skew(30deg, 20deg);
+transform: skewX(30deg);
+transform: skewY(1.07rad);
+
+/* Multiple function values */
+transform: translateX(10px) rotate(10deg) translateY(5px);
+transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+
+/* Global values */
+transform: inherit;
+transform: initial;
+transform: revert;
+transform: revert-layer;
+transform: unset;
+`,
+      },
+      {
+        id: 9,
+        title: 'transform-origin',
+        p: 'Свойство CSS transform-origin задает начало координат для преобразований элемента.',
+        pre: `
+        /* One-value syntax */
+transform-origin: 2px;
+transform-origin: bottom;
+
+/* x-offset | y-offset */
+transform-origin: 3cm 2px;
+
+/* x-offset-keyword | y-offset */
+transform-origin: left 2px;
+
+/* x-offset-keyword | y-offset-keyword */
+transform-origin: right top;
+
+/* y-offset-keyword | x-offset-keyword */
+transform-origin: top right;
+
+/* x-offset | y-offset | z-offset */
+transform-origin: 2px 30% 10px;
+
+/* x-offset-keyword | y-offset | z-offset */
+transform-origin: left 5px -3px;
+
+/* x-offset-keyword | y-offset-keyword | z-offset */
+transform-origin: right bottom 2cm;
+
+/* y-offset-keyword | x-offset-keyword | z-offset */
+transform-origin: bottom right 2cm;
+
+/* Global values */
+transform-origin: inherit;
+transform-origin: initial;
+transform-origin: revert;
+transform-origin: revert-layer;
+transform-origin: unset;
+`,
+      },
+      {
+        id: 10,
+        title: 'scale',
+        p: `
+        Функция CSS scale() определяет преобразование, которое изменяет размер элемента на 2D-плоскости. Поскольку величина масштабирования определяется вектором [sx, sy], она может изменять горизонтальные и вертикальные размеры в разных масштабах. Ее результатом является тип данных <transform-function>.`,
+        pre: `
+        scale(sx)
+        scale(sx, sy)
+`,
+      },
+      {
+        id: 11,
+        title: 'rotate',
+        p: 'Свойство CSS rotate позволяет вам указывать преобразования вращения индивидуально и независимо от свойства transform. Это лучше соответствует типичному использованию пользовательского интерфейса и избавляет от необходимости помнить точный порядок функций преобразования для указания в свойстве transform.',
+        pre: `
+          /* Keyword values */
+rotate: none;
+
+/* Angle value */
+rotate: 90deg;
+rotate: 0.25turn;
+rotate: 1.57rad;
+
+/* x, y, or z axis name plus angle */
+rotate: x 90deg;
+rotate: y 0.25turn;
+rotate: z 1.57rad;
+
+/* Vector plus angle value */
+rotate: 1 1 1 90deg;
+
+/* Global values */
+rotate: inherit;
+rotate: initial;
+rotate: revert;
+rotate: revert-layer;
+rotate: unset;
+
+        `,
+      },
+      {
+        id: 12,
+        title: 'translate',
+        p: 'Свойство CSS translate позволяет вам указывать преобразования перевода индивидуально и независимо от свойства transform. Это лучше соответствует типичному использованию пользовательского интерфейса и избавляет от необходимости помнить точный порядок функций преобразования для указания в значении преобразования.',
+        pre: `
+        /* Keyword values */
+translate: none;
+
+/* Single values */
+translate: 100px;
+translate: 50%;
+
+/* Two values */
+translate: 100px 200px;
+translate: 50% 105px;
+
+/* Three values */
+translate: 50% 105px 5rem;
+
+/* Global values */
+translate: inherit;
+translate: initial;
+translate: revert;
+translate: revert-layer;
+translate: unset;
+`,
+      },
+      {
+        id: 13,
+        title: 'Домашнее задание',
+        p: 'Задача: создать бегающего человечка в конце кидающий огненный шар',
+        pre: `
+          1. Анимация
+
+          Создать анимацию, которая включает:
+          - человечка, который бежит по экрану
+          - человечка, который бросает огненный шар
+          - огненный шар, который летит по экрану и взрывается
+          
+          2. Загрузить картинки
+
+          Загрузить картинки, которые имееют:
+          - картинка человечка
+          - картинка огненного шара
+          - картинка взрыва
+
+          3. Дополнительно:
+
+          Фон:
+          - картника фона под анимацию
+          - интерактивный фон
+          `,
       },
     ],
   },
